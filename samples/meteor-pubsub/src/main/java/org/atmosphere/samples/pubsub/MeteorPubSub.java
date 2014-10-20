@@ -19,12 +19,14 @@ import org.atmosphere.config.service.MeteorService;
 import org.atmosphere.cpr.Broadcaster;
 import org.atmosphere.cpr.BroadcasterFactory;
 import org.atmosphere.cpr.Meteor;
+import org.atmosphere.samples.pubsub.rabbitmq.RabbitMQBroadcaster;
 import org.atmosphere.websocket.WebSocketEventListenerAdapter;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
 
 /**
@@ -38,6 +40,8 @@ public class MeteorPubSub extends HttpServlet {
 
     @Inject
     private BroadcasterFactory broadcasterFactory;
+    
+    
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
